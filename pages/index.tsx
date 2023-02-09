@@ -1,8 +1,8 @@
 import { Oufit } from './_app';
+import Button from './components/Button';
 import Navbar from './components/Navbar';
 import styles from '@/styles/Home.module.css';
 import Head from 'next/head';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -13,8 +13,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main className={Oufit.className}>
         <Navbar />
+        <div className={styles.main__container}>
+          <div className={styles.main__title}>
+            El apoyo que necesitas para tu proximo <div>desafío laboral.</div>
+          </div>
+          <div className={styles.main__subtitle}>
+            Conecta con un reclutardor mediante un match de hablidades
+            laborales.
+          </div>
+          <Button>Mas Informacion</Button>
+        </div>
       </main>
     </>
   );

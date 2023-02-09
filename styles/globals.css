@@ -1,7 +1,9 @@
 :root {
-  --bg-color: #ffffff;
-  --grey: #575757;
+  --Bg-color: #ffffff;
+  --Grey: #575757;
+  --Primary: #28cdcf;
   --Secondary: #a873e8;
+  --Shadow: rgba(255, 255, 255, 0.25);
   /* --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
