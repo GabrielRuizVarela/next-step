@@ -196,15 +196,20 @@
 }
 .bannerContainer {
   overflow: hidden;
-  background-color: var(--Primary);
+  background-color: rgb(0, 218, 178);
+  /* 0	218	178	 */
   background-image: radial-gradient(
-      at 91% 12%,
-      var(--Primary) 0px,
+      at 112% 12%,
+      #5ab4e0 0px,
       transparent 50%
     ),
-    radial-gradient(at 59% 76%, rgb(67, 93, 155) 0px, transparent 50%),
-    radial-gradient(at 12% 107%, var(--Secondary) 0px, transparent 50%),
-    radial-gradient(at 42% 94%, var(--Secondary) 0px, transparent 90%);
+    /* radial-gradient(at 59% 76%, rgb(67, 93, 155) 0px, transparent 50%), */
+    /* radial-gradient(at 0% 100%, var(--Primary) 0px, transparent 50%), */
+    radial-gradient(at 100% 100%, var(--Secondary) 100px, transparent 90%),
+    radial-gradient(at 100% 0%, var(--Secondary) 100px, transparent 50%),
+    radial-gradient(at 50% 110%, rgb(84, 239, 123) 10px, transparent 70%);
+
+
 }
 
 .bannerColumn {
