@@ -7,5 +7,5 @@ export const Outfit = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} className={Outfit.className} />;
+  return <Component {...pageProps} />;
 }
