@@ -180,7 +180,7 @@ const AudioChatBubble = ({ style }: { style: {} }) => (
   </LeftChatBubble>
 );
 
-export const Phone = ({ children }: { children: React.ReactNode }) => {
+const Phone = ({ children }: { children: React.ReactNode }) => {
   const { scrollYProgress } = useScroll();
   const Yscroll = useTransform(scrollYProgress, [0, 1], [0, -100], {
     clamp: false,
@@ -281,3 +281,5 @@ export const Messages = () => (
     <LeftChatBubble>Te envio audio!!!</LeftChatBubble>
   </>
 );
+
+export default Phone;

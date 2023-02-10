@@ -2,7 +2,7 @@ import { Outfit } from './_app';
 import Banner from './components/Banner';
 import Button from './components/Button';
 import Navbar from './components/Navbar';
-import { Messages, Phone } from './components/Phone';
+import Phone, { Messages } from './components/Phone';
 import styles from '@/styles/Home.module.css';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
