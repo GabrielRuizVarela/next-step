@@ -1,4 +1,4 @@
-import { Oufit } from '../_app';
+import { Outfit } from '../_app';
 import bigLogo from '../fonts/logo/nxtstepwhite.png';
 import Button from './Button';
 import styles from '@/styles/Home.module.css';
@@ -23,10 +23,10 @@ const Navbar = () => (
       />
     </div>
     <div className={styles.navbar__links}>
-      <a href="#" className={Oufit.className}>
+      <a href="#" className={Outfit.className}>
         Eres Profesional
       </a>
-      <a href="#" className={Oufit.className}>
+      <a href="#" className={Outfit.className}>
         Eres Reclutador
       </a>
       <Button>Log In</Button>

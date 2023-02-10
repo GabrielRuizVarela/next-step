@@ -76,40 +76,38 @@ const LeftChatBubble = ({
 }: {
   children: React.ReactNode;
   style?: {};
-}) => {
-  return (
-    <div className={styles.leftChatBubble} style={style}>
-      {children}
-    </div>
-  );
-};
-const RightChatBubble = ({ children }: { children: React.ReactNode }) => {
-  return <div className={styles.rightChatBubble}>{children}</div>;
-};
-const AudioChatBubble = ({ style }: { style: {} }) => {
-  return (
-    <LeftChatBubble style={style}>
+}) => (
+  <div className={styles.leftChatBubble} style={style}>
+    {children}
+  </div>
+);
+
+const RightChatBubble = ({ children }: { children: React.ReactNode }) => (
+  <div className={styles.rightChatBubble}>{children}</div>
+);
+
+const AudioChatBubble = ({ style }: { style: {} }) => (
+  <LeftChatBubble style={style}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 5,
+        flexGrow: 1,
+      }}
+    >
+      <MdiPlay />
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 5,
-          flexGrow: 1,
+          width: 70,
+          height: 1,
+          border: '1px solid #2d2d2d',
         }}
-      >
-        <MdiPlay />
-        <div
-          style={{
-            width: 70,
-            height: 1,
-            border: '1px solid #2d2d2d',
-          }}
-        />
-        0:16
-      </div>
-    </LeftChatBubble>
-  );
-};
+      />
+      0:16
+    </div>
+  </LeftChatBubble>
+);
 
 export const Phone = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -123,6 +121,7 @@ export const Phone = ({ children }: { children: React.ReactNode }) => {
         display: 'flex',
         flexDirection: 'column',
         marginBottom: 201,
+        position: 'relative',
       }}
     >
       <div
@@ -165,7 +164,7 @@ export const Phone = ({ children }: { children: React.ReactNode }) => {
           display: 'flex',
           alignItems: 'center',
           position: 'absolute',
-          bottom: -425,
+          bottom: -70,
           zIndex: 100,
         }}
       >

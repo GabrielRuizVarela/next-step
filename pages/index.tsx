@@ -1,11 +1,10 @@
-import phoneImg from '../public/phone.png';
-import { Messages, Phone } from './Phone';
-import { Oufit } from './_app';
+import { Messages, Phone } from './components/Phone';
+import { Outfit } from './_app';
+import Banner from './components/Banner';
 import Button from './components/Button';
 import Navbar from './components/Navbar';
 import styles from '@/styles/Home.module.css';
 import Head from 'next/head';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={Oufit.className}>
+      <main className={Outfit.className}>
         <Navbar />
         <div className={styles.section1}>
           <div className={styles.main__container}>
@@ -31,27 +30,10 @@ export default function Home() {
             <Phone>
               <Messages />
             </Phone>
-            <div className={styles.bannerContainer}>
-              <div className={styles.banner}>
-                <div className={styles.bannerColumn}>
-                  <div className={styles.bannerTitle}>3K</div>
-                  <div className={styles.bannerSubtitle}>Usuarios activos</div>
-                </div>
-                <div className={styles.bannerColumn}>
-                  <div className={styles.bannerTitle}>1K+</div>
-                  <div className={styles.bannerSubtitle}>Coaches</div>
-                </div>
-                <div className={styles.bannerColumn}>
-                  <div className={styles.bannerTitle}>4.7+</div>
-                  <div className={styles.bannerSubtitle}>Empresas</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+        <Banner />
       </main>
     </>
   );
 }
-
-// const AudioChatBubble = (

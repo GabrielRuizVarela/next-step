@@ -33,7 +33,9 @@
   text-decoration: none;
   font-weight: 500;
 }
+
 .button {
+  cursor: pointer;
   flex-shrink: 0;
   padding: 0.5rem 1rem;
   line-height: 25.5px;
@@ -83,7 +85,6 @@
 }
 
 .main__subtitle {
-  height: auto; /* 84px */
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-word;
@@ -191,17 +192,6 @@
   width: 100vw;
   justify-content: center;
   align-items: center;
-  /* background-color: #fbcffe;
-  background-image: radial-gradient(
-      at 48% 26%,
-      rgb(125, 220, 216) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 78% 33%, rgb(105, 111, 196) 0px, transparent 50%),
-    radial-gradient(at 37% 50%, rgb(160, 133, 205) 0px, transparent 50%),
-    radial-gradient(at 61% 20%, hsla(346, 60%, 79%, 1) 0px, transparent 50%),
-    radial-gradient(at 63% 46%, hsla(262, 82%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 91% 72%, hsla(189, 96%, 76%, 1) 0px, transparent 50%); */
   background-color: rgba(111, 163, 235, 0.729);
   background-image: radial-gradient(
       at 91% 12%,
@@ -243,9 +233,9 @@
   }
 
   .navbar button {
-    /* padding: 0.8rem; */
     font-size: 15px !important;
   }
+
   .navbar__links a {
     display: none;
   }
