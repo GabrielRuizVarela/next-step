@@ -1,5 +1,14 @@
 import styles from '@/styles/Home.module.css';
-import { SVGProps } from 'react';
+import {
+  animate,
+  easeIn,
+  motion,
+  useAnimation,
+  useInView,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
+import { SVGProps, useEffect, useRef } from 'react';
 import Avatar, { genConfig } from 'react-nice-avatar';
 
 const femaleAvatarConfig = genConfig('female');
@@ -70,21 +79,83 @@ export function MdiTelegram(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+const animationVariants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: 'easeInOut',
+    },
+  },
+};
+
 const LeftChatBubble = ({
   children,
   style,
 }: {
   children: React.ReactNode;
   style?: {};
-}) => (
-  <div className={styles.leftChatBubble} style={style}>
-    {children}
-  </div>
-);
+}) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll();
+  const Yscroll = useTransform(scrollYProgress, [0, 1], [0, -100], {
+    clamp: false,
+    ease: easeIn,
+  });
+  const controls = useAnimation();
+  const isInView = useInView(ref);
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    }
+  }, [isInView, controls]);
+  return (
+    <motion.div
+      className={styles.leftChatBubble}
+      style={{ ...style, translateY: Yscroll }}
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={animationVariants}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
-const RightChatBubble = ({ children }: { children: React.ReactNode }) => (
-  <div className={styles.rightChatBubble}>{children}</div>
-);
+const RightChatBubble = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll();
+  const Yscroll = useTransform(scrollYProgress, [0, 1], [0, -100], {
+    clamp: false,
+    ease: easeIn,
+  });
+  const controls = useAnimation();
+  const isInView = useInView(ref, { once: true });
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    }
+  }, [isInView, controls]);
+
+  return (
+    <motion.div
+      className={styles.rightChatBubble}
+      ref={ref}
+      style={{ translateY: Yscroll }}
+      animate={controls}
+      initial="hidden"
+      variants={animationVariants}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const AudioChatBubble = ({ style }: { style: {} }) => (
   <LeftChatBubble style={style}>
@@ -110,6 +181,11 @@ const AudioChatBubble = ({ style }: { style: {} }) => (
 );
 
 export const Phone = ({ children }: { children: React.ReactNode }) => {
+  const { scrollYProgress } = useScroll();
+  const Yscroll = useTransform(scrollYProgress, [0, 1], [0, -100], {
+    clamp: false,
+    ease: easeIn,
+  });
   return (
     <div
       style={{
@@ -141,6 +217,7 @@ export const Phone = ({ children }: { children: React.ReactNode }) => {
         <Avatar
           style={{ width: '30px', height: '30px' }}
           {...femaleAvatarConfig}
+          id="clara"
         />
         <div
           style={{
@@ -168,10 +245,13 @@ export const Phone = ({ children }: { children: React.ReactNode }) => {
           zIndex: 100,
         }}
       >
-        <Avatar
-          style={{ width: '40px', height: '40px' }}
-          {...maleAvatarConfig}
-        />
+        <motion.div style={{ translateY: Yscroll }}>
+          <Avatar
+            style={{ width: '40px', height: '40px' }}
+            {...maleAvatarConfig}
+            id="leo"
+          />
+        </motion.div>
         <AudioChatBubble
           style={{ boxShadow: '0px 10px 20px 0px rgba(0, 0, 0, 0.1)' }}
         />
