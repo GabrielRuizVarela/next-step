@@ -1,8 +1,11 @@
+import phoneImg from '../public/phone.png';
+import { Messages, Phone } from './Phone';
 import { Oufit } from './_app';
 import Button from './components/Button';
 import Navbar from './components/Navbar';
 import styles from '@/styles/Home.module.css';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -15,17 +18,33 @@ export default function Home() {
       </Head>
       <main className={Oufit.className}>
         <Navbar />
-        <div className={styles.main__container}>
-          <div className={styles.main__title}>
-            El apoyo que necesitas para tu proximo <div>desafío laboral.</div>
+        <div className={styles.section1}>
+          <div className={styles.main__container}>
+            <div className={styles.main__title}>
+              El apoyo que necesitas para tu proximo <div>desafío laboral.</div>
+            </div>
+            <div className={styles.main__subtitle}>
+              Conecta con un reclutardor mediante un match de hablidades
+              laborales.
+            </div>
+            <Button>Mas Informacion</Button>
+            {/* <div className={styles.asset}>
+              <Image
+                src={phoneImg}
+                height={649}
+                width={288}
+                alt="phone"
+                style={{ objectFit: 'cover', marginBottom: 148 }}
+              />
+            </div> */}
+            <Phone>
+              <Messages />
+            </Phone>
           </div>
-          <div className={styles.main__subtitle}>
-            Conecta con un reclutardor mediante un match de hablidades
-            laborales.
-          </div>
-          <Button>Mas Informacion</Button>
         </div>
       </main>
     </>
   );
 }
+
+// const AudioChatBubble = (
