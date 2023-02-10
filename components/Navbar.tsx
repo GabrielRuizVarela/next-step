@@ -1,5 +1,5 @@
-import { Outfit } from '../_app';
 import bigLogo from '../fonts/logo/nxtstepwhite.png';
+import { Outfit } from '../pages/_app';
 import Button from './Button';
 import styles from '@/styles/Home.module.css';
 import Image from 'next/image';

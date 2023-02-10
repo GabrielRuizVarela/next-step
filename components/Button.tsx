@@ -1,4 +1,4 @@
-import { Outfit } from '../_app';
+import { Outfit } from '../pages/_app';
 import styles from '@/styles/Home.module.css';
 import React from 'react';
 
