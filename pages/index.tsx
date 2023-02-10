@@ -28,18 +28,25 @@ export default function Home() {
               laborales.
             </div>
             <Button>Mas Informacion</Button>
-            {/* <div className={styles.asset}>
-              <Image
-                src={phoneImg}
-                height={649}
-                width={288}
-                alt="phone"
-                style={{ objectFit: 'cover', marginBottom: 148 }}
-              />
-            </div> */}
             <Phone>
               <Messages />
             </Phone>
+            <div className={styles.bannerContainer}>
+              <div className={styles.banner}>
+                <div className={styles.bannerColumn}>
+                  <div className={styles.bannerTitle}>3K</div>
+                  <div className={styles.bannerSubtitle}>Usuarios activos</div>
+                </div>
+                <div className={styles.bannerColumn}>
+                  <div className={styles.bannerTitle}>1K+</div>
+                  <div className={styles.bannerSubtitle}>Coaches</div>
+                </div>
+                <div className={styles.bannerColumn}>
+                  <div className={styles.bannerTitle}>4.7+</div>
+                  <div className={styles.bannerSubtitle}>Empresas</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>

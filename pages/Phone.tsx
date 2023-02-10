@@ -70,16 +70,33 @@ export function MdiTelegram(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-const LeftChatBubble = ({ children }: { children: React.ReactNode }) => {
-  return <div className={styles.leftChatBubble}>{children}</div>;
+const LeftChatBubble = ({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: {};
+}) => {
+  return (
+    <div className={styles.leftChatBubble} style={style}>
+      {children}
+    </div>
+  );
 };
 const RightChatBubble = ({ children }: { children: React.ReactNode }) => {
   return <div className={styles.rightChatBubble}>{children}</div>;
 };
-const AudioChatBubble = () => {
+const AudioChatBubble = ({ style }: { style: {} }) => {
   return (
-    <LeftChatBubble>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+    <LeftChatBubble style={style}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 5,
+          flexGrow: 1,
+        }}
+      >
         <MdiPlay />
         <div
           style={{
@@ -105,6 +122,7 @@ export const Phone = ({ children }: { children: React.ReactNode }) => {
         borderRadius: '40px',
         display: 'flex',
         flexDirection: 'column',
+        marginBottom: 201,
       }}
     >
       <div
@@ -142,6 +160,23 @@ export const Phone = ({ children }: { children: React.ReactNode }) => {
         </div>
       </div>
       <div className={styles.chatContainer}>{children}</div>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          position: 'absolute',
+          bottom: -425,
+          zIndex: 100,
+        }}
+      >
+        <Avatar
+          style={{ width: '40px', height: '40px' }}
+          {...maleAvatarConfig}
+        />
+        <AudioChatBubble
+          style={{ boxShadow: '0px 10px 20px 0px rgba(0, 0, 0, 0.1)' }}
+        />
+      </div>
       <div className={styles.chatInputContainer}>
         <div className={styles.chatInput}>Message</div>
         <button className={styles.chatInputButton}>
@@ -156,7 +191,8 @@ export const Messages = () => (
   <>
     <RightChatBubble>Hola, soy Clara!</RightChatBubble>
     <RightChatBubble>
-      Vi, que estas en busqueda de un Programador?
+      Vi, que estas en <br /> busqueda de
+      <br /> un Programador?
     </RightChatBubble>
     <LeftChatBubble>Hola Leo</LeftChatBubble>
     <LeftChatBubble>Si, busco un FullStack</LeftChatBubble>
@@ -164,9 +200,5 @@ export const Messages = () => (
     <RightChatBubble>Si, claro</RightChatBubble>
     <RightChatBubble>Quiero mas Detalles</RightChatBubble>
     <LeftChatBubble>Te envio audio!!!</LeftChatBubble>
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <Avatar style={{ width: '30px', height: '30px' }} {...maleAvatarConfig} />
-      <AudioChatBubble />
-    </div>
   </>
 );
