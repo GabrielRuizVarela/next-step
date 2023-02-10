@@ -193,16 +193,18 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgba(111, 163, 235, 0.729);
+}
+.bannerContainer {
+  overflow: hidden;
+  background-color: var(--Primary);
   background-image: radial-gradient(
       at 91% 12%,
-      rgb(212, 195, 255) 0px,
+      var(--Primary) 0px,
       transparent 50%
     ),
     radial-gradient(at 59% 76%, rgb(67, 93, 155) 0px, transparent 50%),
-    radial-gradient(at 12% 7%, rgb(169, 242, 244) 0px, transparent 50%),
-    radial-gradient(at 2% 42%, rgba(149, 89, 192, 0.574) 0px, transparent 50%),
-    radial-gradient(at 80% 89%, rgba(188, 255, 216, 0.767) 0px, transparent 50%);
+    radial-gradient(at 12% 107%, var(--Secondary) 0px, transparent 50%),
+    radial-gradient(at 42% 94%, var(--Secondary) 0px, transparent 90%);
 }
 
 .bannerColumn {
@@ -232,7 +234,7 @@
     margin-top: 6.25rem;
     margin: 1.25rem;
   }
-  .main__container{
+  .main__container {
     margin-top: 10rem;
   }
 
