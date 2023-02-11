@@ -1,12 +1,14 @@
 import footerImg from '../../fonts/logo/Banner para LinkedIn marca personal rosa, lila, blanco.png';
+import logo from '../../fonts/logo/nextlogo.png';
+import useMediaQuery from './useMediaQuery';
 import logInGirlImage from '/public/login-girl.png';
 import Navbar from '@/components/Navbar';
 import styles from '@/styles/Login.module.css';
+import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { SVGProps } from 'react';
-import logo from '../../fonts/logo/nextlogo.png';
-import useMediaQuery from './useMediaQuery';
+
 export default function LogIn() {
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
@@ -20,39 +22,56 @@ export default function LogIn() {
       </Head>
       <Navbar />
       <main className={styles.main}>
-        <div className={styles.container}>
+        <motion.div
+          className={styles.container}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <div className={styles.rectangle}>
             <Image
               src={logInGirlImage}
               alt="girl standing with a phone in her hand"
             />
           </div>
-        </div>
+        </motion.div>
         <div className={styles.button__container}>
-          <button className={styles.button}>
+          <motion.button
+            className={styles.button}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <LogosGoogleIcon />
             Log in with Google
-          </button>
-          <button className={styles.button}>
+          </motion.button>
+          <motion.button
+            className={styles.button}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <LogosLinkedinIcon />
             Log in with LinkedIn
-          </button>
+          </motion.button>
         </div>
-      <footer>
-        {
-          isDesktop ? (
-            <Image src={footerImg} alt="NextStep logo"
-            style={{ width: "110%", objectFit: "cover" }}
+        <footer>
+          {isDesktop ? (
+            <Image
+              src={footerImg}
+              alt="NextStep logo"
+              style={{ width: '110%', objectFit: 'cover' }}
             />
           ) : (
-            <Image src={logo} alt="NextStep logo"
-            height={100}
-            width={100}
-            style={{ objectFit: "cover" }}
+            <Image
+              src={logo}
+              alt="NextStep logo"
+              height={100}
+              width={100}
+              style={{ objectFit: 'cover' }}
             />
-          )
-        }
-      </footer>
+          )}
+        </footer>
       </main>
     </>
   );
