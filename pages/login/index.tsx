@@ -2,13 +2,13 @@ import footerImg from '../../fonts/logo/Banner para LinkedIn marca personal rosa
 import logo from '../../fonts/logo/nextlogo.png';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import logInGirlImage from '/public/login-girl.png';
+import { LogosGoogleIcon, LogosLinkedinIcon } from '@/components/Icons';
 import Navbar from '@/components/Navbar';
 import styles from '@/styles/Login.module.css';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
-import React, { SVGProps } from 'react';
-import { LogosGoogleIcon, LogosLinkedinIcon } from '@/components/Icons';
+import React from 'react';
 
 export default function LogIn() {
   const isDesktop = useMediaQuery('(min-width: 768px)');
@@ -77,4 +77,3 @@ export default function LogIn() {
     </>
   );
 }
-
