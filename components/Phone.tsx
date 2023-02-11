@@ -1,6 +1,11 @@
+import {
+  IcBaselineArrowBackIosNew,
+  MdiDotsVertical,
+  MdiPlay,
+  MdiTelegram,
+} from './Icons';
 import styles from '@/styles/Home.module.css';
 import {
-  animate,
   easeIn,
   motion,
   useAnimation,
@@ -8,76 +13,11 @@ import {
   useScroll,
   useTransform,
 } from 'framer-motion';
-import { SVGProps, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Avatar, { genConfig } from 'react-nice-avatar';
 
 const femaleAvatarConfig = genConfig('female');
 const maleAvatarConfig = genConfig('man');
-
-export function IcBaselineArrowBackIosNew(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-      {...props}
-    >
-      <path
-        fill="currentColor"
-        d="M17.77 3.77L16 2L6 12l10 10l1.77-1.77L9.54 12z"
-      />
-    </svg>
-  );
-}
-
-export function MdiDotsVertical(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-      {...props}
-    >
-      <path
-        fill="currentColor"
-        d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2Z"
-      />
-    </svg>
-  );
-}
-
-export function MdiPlay(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-      {...props}
-    >
-      <path fill="currentColor" d="M8 5.14v14l11-7l-11-7Z" />
-    </svg>
-  );
-}
-
-export function MdiTelegram(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-      {...props}
-    >
-      <path
-        d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
 
 const animationVariants = {
   hidden: {
