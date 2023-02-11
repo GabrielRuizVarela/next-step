@@ -61,7 +61,7 @@ export default function LogIn() {
             <Image
               src={footerImg}
               alt="NextStep logo"
-              style={{ width: '110%', objectFit: 'cover' }}
+              style={{ objectFit: 'cover' }}
             />
           ) : (
             <Image
