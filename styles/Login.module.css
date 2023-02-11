@@ -1,0 +1,63 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 84px;
+}
+
+.container {
+  width: 872px;
+  height: 425px;
+  margin-top: 11.25rem;
+  position: relative;
+}
+
+.rectangle {
+  position: absolute;
+  width: 872px;
+  height: 325px;
+  /* left: 356px; */
+  /* top: 154px; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: radial-gradient(
+      126.81% 313.34% at 63.44% -23.97%,
+      #ffd25e 0%,
+      rgba(117, 4, 187, 0.747) 97.17%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  box-shadow: -429px 98px 176px rgba(0, 0, 0, 0.01),
+    -242px 55px 149px rgba(0, 0, 0, 0.05), -107px 25px 110px rgba(0, 0, 0, 0.09),
+    -27px 6px 61px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.button__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  width: 380px;
+  height: 48px;
+  left: 602px;
+  top: 563px;
+
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+}
+
