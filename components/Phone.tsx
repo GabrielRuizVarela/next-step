@@ -54,6 +54,7 @@ const LeftChatBubble = ({
       controls.start('visible');
     }
   }, [isInView, controls]);
+
   return (
     <motion.div
       className={styles.leftChatBubble}
@@ -126,6 +127,7 @@ const Phone = ({ children }: { children: React.ReactNode }) => {
     clamp: false,
     ease: easeIn,
   });
+
   return (
     <div
       style={{

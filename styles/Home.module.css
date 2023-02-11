@@ -104,7 +104,7 @@
 }
 
 .section1 {
-  height: min-content; /* 1497px */
+  height: min-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -155,12 +155,14 @@
   position: relative;
   z-index: 0;
 }
+
 .chatInputContainer {
   display: flex;
   align-items: center;
   padding: 10px;
   gap: 10px;
 }
+
 .chatInput {
   display: flex;
   align-items: center;
@@ -173,6 +175,7 @@
   font-size: 0.9rem;
   color: var(--Grey);
 }
+
 .chatInputButton {
   display: flex;
   align-items: center;
@@ -194,22 +197,14 @@
   justify-content: center;
   align-items: center;
 }
+
 .bannerContainer {
   overflow: hidden;
   background-color: rgb(0, 218, 178);
-  /* 0	218	178	 */
-  background-image: radial-gradient(
-      at 112% 12%,
-      #5ab4e0 0px,
-      transparent 50%
-    ),
-    /* radial-gradient(at 59% 76%, rgb(67, 93, 155) 0px, transparent 50%), */
-    /* radial-gradient(at 0% 100%, var(--Primary) 0px, transparent 50%), */
+  background-image: radial-gradient(at 112% 12%, #5ab4e0 0px, transparent 50%),
     radial-gradient(at 100% 100%, var(--Secondary) 100px, transparent 90%),
     radial-gradient(at 100% 0%, var(--Secondary) 100px, transparent 50%),
     radial-gradient(at 50% 110%, rgb(84, 239, 123) 10px, transparent 70%);
-
-
 }
 
 .bannerColumn {
@@ -221,12 +216,14 @@
   width: 220px;
   padding: 40px;
 }
+
 .bannerTitle {
   font-size: 2.7rem;
   font-weight: 600;
   color: #fff;
   text-align: center;
 }
+
 .bannerSubtitle {
   font-size: 1.2rem;
   color: #fff;
