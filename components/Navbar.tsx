@@ -26,8 +26,8 @@ const Navbar = () => (
       </Link>
     </div>
     <div className={styles.navbar__links}>
-      <div className={Outfit.className}>Eres Profesional</div>
-      <div className={Outfit.className}>Eres Reclutador</div>
+      <span  className={Outfit.className}>Eres Profesional</span>
+      <span className={Outfit.className}>Eres Reclutador</span>
       <Link href="/login">
         <Button>Log In</Button>
       </Link>
